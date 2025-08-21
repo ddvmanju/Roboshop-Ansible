@@ -1,0 +1,4 @@
+- name: Import NodeJS common role
+  ansibile.builtin.include_role:
+    name: common
+    tasks_from: nodejs
