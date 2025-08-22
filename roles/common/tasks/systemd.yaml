@@ -1,11 +1,11 @@
 - name: Setup SystemD service file
   ansible.builtin.copy:
-    src: catalogue.service"
-    dest: /etc/systemd/system/ catalogue.service
+    src: "{{ app_name }}".service"
+    dest: /etc/systemd/system/catalogue.service
 
 - name: Start Application
   ansible.builtin.systemd_service:
-    name: catalogue
+    name: "{{ app_name }}"
     state: restarted
     enabled: true
     daemon_reload: true
