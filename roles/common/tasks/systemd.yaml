@@ -1,11 +1,16 @@
-# name: Setup SystemD service file
- # ansible.builtin.copy:
-  #  src: catalogue.service
-   # dest: /etc/systemd/system/catalogue.service
+- name: Setup SystemD service file
+  ansible.builtin.copy:
+    src: catalogue.service
+    dest: /etc/systemd/system/catalogue.service
+    mode: '0644'
 
-- name: Start Application
-  ansible.builtin.systemd_service:
+- name: Reload systemd daemon
+  ansible.builtin.command:
+    cmd: systemctl daemon-reload
+
+- name: Start and enable catalogue service
+  ansible.builtin.systemd:
     name: catalogue
-    state: restarted
+    state: started
     enabled: true
-    daemon_reload: true
+
