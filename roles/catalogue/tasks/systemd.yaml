@@ -1,6 +1,6 @@
 - name: Setup SystemD service file
   ansible.builtin.copy:
-    src: catalogue.service
+    src: "{{ app_name }}".service
     dest: "/etc/systemd/system/{{ app_name }}".service
     mode: '0644'
 
@@ -10,7 +10,7 @@
 
 - name: Start and enable catalogue service
   ansible.builtin.systemd:
-    name: catalogue
+    name: "{{ app_name }}"
     state: started
     enabled: true
 

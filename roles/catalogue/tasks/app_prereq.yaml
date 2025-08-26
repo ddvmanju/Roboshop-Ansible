@@ -25,7 +25,7 @@
 
 - name: Extract app content
   ansible.builtin.unarchive:
-    src: ""/tmp/{{ app_name }}"-v3.zip
+    src: "/tmp/{{ app_name }}"-v3.zip
     dest: /app
     remote_src: yes
 
