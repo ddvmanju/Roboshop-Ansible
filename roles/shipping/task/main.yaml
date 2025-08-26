@@ -1,0 +1,15 @@
+- name: Import NodeJS common role
+  ansible.builtin.include_role:
+    name: "{{ app_name }}"
+    tasks_from: java.yaml
+
+- name: install MySQL Client
+  ansible.builtin.dnf:
+    name: mysql
+    state: installed
+
+- name: Load Schema
+  community.mysql.mysql_db:
+    state: import
+    name: all
+    target: app/db/schema.sql
