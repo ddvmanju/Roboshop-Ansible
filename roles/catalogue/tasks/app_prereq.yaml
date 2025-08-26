@@ -21,7 +21,7 @@
 - name: Download app ZIP
   ansible.builtin.get_url:
     url: "https://roboshop-artifacts.s3.amazonaws.com/{{ app_name }}-v3.zip"
-    dest: "/tmp/{{ app_name }}"-v3.zip
+    dest: "/tmp/{{ app_name }}-v3.zip"
 
 - name: Extract app content
   ansible.builtin.unarchive:
