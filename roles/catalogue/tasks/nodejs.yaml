@@ -18,8 +18,7 @@
     path: /app
 
 - name: Setup systemd service
-  ansible.builtin.include_tasks:
-    file: systemd.yaml
+  ansible.builtin.include_tasks: systemd.yaml
 
 
 
