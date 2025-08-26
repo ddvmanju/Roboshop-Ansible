@@ -10,7 +10,7 @@
 
 - name: update listen address
   ansible.builtin.replace:
-    path: "/etc/{{ app_name }}.conf"
+    path: "/etc/mongod.conf"
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
