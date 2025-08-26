@@ -12,12 +12,6 @@
     path: /app
     state: directory
 
-# name: Download and extract app content
- # ansible.builtin.unarchive:
-  #  src: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip
-     # dest: /app
-   # remote_src: no
-
 - name: Download app ZIP
   ansible.builtin.get_url:
     url: "https://roboshop-artifacts.s3.amazonaws.com/{{ app_name }}-v3.zip"
