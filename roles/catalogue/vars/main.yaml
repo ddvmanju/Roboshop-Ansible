@@ -1,1 +1,1 @@
-app_name: catalogue
+app_name: "{{ app_name }}"
