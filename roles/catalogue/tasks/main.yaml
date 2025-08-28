@@ -10,7 +10,7 @@
 
 - name: Install MongoDB
   ansible.builtin.dnf:
-    name: "{{ app_name }}-org"
+    name: mongodb-org
     state: installed
 
 - name: Load Master Data
