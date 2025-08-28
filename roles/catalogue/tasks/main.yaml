@@ -1,6 +1,6 @@
 - name: Import NodeJS common role
   ansible.builtin.include_role:
-    name: "{{ app_name }}"
+    name: common
     tasks_from: nodejs.yaml
 
 - name: Copy MongoDB repo file
