@@ -15,7 +15,7 @@
     state: import
     name: all
     target: /app/db/{{ item }}.sql
-    login_host: mysql-dev.azdevops.online
+    login_host: mysql-{{ ENV }}.azdevops.online
     login_user: root
     login_password: Roboshop@1
   loop:
