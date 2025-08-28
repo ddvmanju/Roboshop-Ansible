@@ -14,29 +14,11 @@
   community.mysql.mysql_db:
     state: import
     name: all
-    target: /app/db/schema.sql
+    target: /app/db/{{ item }}.sql
     login_host: mysql-dev.azdevops.online
     login_user: root
     login_password: Roboshop@1
-
-
-- name: Load App user
-  community.mysql.mysql_db:
-    state: import
-    name: all
-    target: /app/db/app-user.sql
-    login_host: mysql-dev.azdevops.online
-    login_user: root
-    login_password: Roboshop@1
-
-
-- name: Load Master Data
-  community.mysql.mysql_db:
-    state: import
-    name: all
-    target: /app/db/master-data.sql
-    login_host: mysql-dev.azdevops.online
-    login_user: root
-    login_password: Roboshop@1
-
-
+  loop:
+    - schema
+    - app-user
+    - master-data
